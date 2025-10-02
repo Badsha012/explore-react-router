@@ -1,31 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
-
+import PlantCard from '../Components/PlantCard';
+import { useLoaderData } from 'react-router-dom';
 
 const Home = () => {
- const [Plants,setPlants] =useState([])
- useEffect(()=>{
-    fetch('https://openapi.programming-hero.com/api/plants')
-    .then(res => res.json())
-    .then(data => setPlants(data?.plants));
-  
- }, [])
-console.log(Plants);
+  const { plants } = useLoaderData();
+  // console.log(plants);
 
-    return (
-        <div>
-            <p>Welcome Home</p>
-            <p>Plant Card</p>
-            {
-                Plants.map(plant=>{
-                  return <p>{plant.name}</p>
-
-                })
-            }
-
-        </div>
-    );
+  return (
+    <div>
+      <div className="grid grid-cols-3 gap-12 px-12 py-8">
+        {plants.map(plant => (
+          <PlantCard key={plant.id} plant={plant} />
+        ))}
+      </div>
+      <Footer />
+    </div>
+  );
 };
 
 export default Home;
