@@ -19,7 +19,8 @@ console.log(Plants);
             <p>Plant Card</p>
             {
                 Plants.map(plant=>{
-                  return <p key={plant.id}>{plant.name}</p>
+                  return <p>{plant.name}</p>
+
                 })
             }
 
