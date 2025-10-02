@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const PlantCard = ({plant}) => {
-    const{name,image,category,price}=plant
+    const{name,image,category,price,id}=plant
     return (
     <div className="card bg-base-100 w-96 shadow-sm">
   <figure className='h-48'>
@@ -15,7 +15,7 @@ const PlantCard = ({plant}) => {
     <p>Category:{category}</p>
     <p>Price:{price}$</p>
     <div className="card-actions justify-end">
-      <Link to='/plantsdetails' className="btn btn-primary">View Details</Link>
+      <Link to={`/plantsdetails/${id}`} className="btn btn-primary">View Details</Link>
     </div>
   </div>
 </div>
