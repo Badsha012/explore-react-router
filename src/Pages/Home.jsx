@@ -4,22 +4,22 @@ import Footer from '../Components/Footer';
 
 
 const Home = () => {
- const [plants,setPlants] =useState([])
+ const [Plants,setPlants] =useState([])
  useEffect(()=>{
     fetch('https://openapi.programming-hero.com/api/plants')
     .then(res => res.json())
     .then(data => setPlants(data?.plants));
   
  }, [])
-console.log(plants);
+console.log(Plants);
 
     return (
         <div>
             <p>Welcome Home</p>
             <p>Plant Card</p>
             {
-                plants.map(plant=>{
-                    <p>{plant.name}</p>
+                Plants.map(plant=>{
+                  return <p key={plant.id}>{plant.name}</p>
                 })
             }
 

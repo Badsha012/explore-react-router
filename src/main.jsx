@@ -15,6 +15,11 @@ const router=createBrowserRouter([
   Component:RootLayout,
   children:[
     {
+  index:true,
+  element:<Home></Home>
+},
+
+    {
   path:'/home',
   element:<Home></Home>
 },
