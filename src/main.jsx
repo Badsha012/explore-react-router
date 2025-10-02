@@ -7,10 +7,15 @@ import { createBrowserRouter, RouterProvider } from 'react-router'
 import About from './Pages/About.jsx'
 import Contact from './Pages/Contact.jsx'
 import Home from './Pages/Home.jsx'
+import RootLayout from './Layout/RootLayout.jsx'
 
 const router=createBrowserRouter([
 {
-  index:true,
+  path:'/',
+  Component:RootLayout,
+  children:[
+    {
+  path:'/home',
   element:<Home></Home>
 },
 {
@@ -21,6 +26,12 @@ const router=createBrowserRouter([
   path:'/about',
   element:<About></About>
 },
+
+
+  ]
+},
+
+
 
 
 ])
