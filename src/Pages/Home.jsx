@@ -4,7 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 
 const Home = () => {
   const { plants } = useLoaderData();
-  // console.log(plants);
+ 
 
   return (
     <div>
