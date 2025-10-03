@@ -13,7 +13,7 @@ const Home = () => {
           <PlantCard key={plant.id} plant={plant} />
         ))}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
